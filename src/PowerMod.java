@@ -21,6 +21,6 @@ public class PowerMod {
     public static long power(long a, long power, long mod) {
         if (power == 1) return a;
         if (power % 2 == 1) return (a * power(a, power/2, mod)) % mod;
-        return (power(1, power/2, mod) * power(1, power/2, mod)) % mod;
+        return (power(a, power/2, mod) * power(a, power/2, mod)) % mod;
     }
 }
