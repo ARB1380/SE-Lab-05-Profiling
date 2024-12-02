@@ -19,12 +19,8 @@ public class PowerMod {
     }
 
     public static long power(long a, long power, long mod) {
-        long result = 1;
-        for (long i = 0; i < power; i++) {
-            result *= a;
-            result %= mod;
-        }
-
-        return result;
+        if (power == 1) return a;
+        if (power % 2 == 1) return (a * power(a, power/2, mod)) % mod;
+        return (power(1, power/2, mod) * power(1, power/2, mod)) % mod;
     }
 }
